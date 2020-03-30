@@ -29,7 +29,7 @@ def create():
         data = request.form.to_dict(flat=True)      # Data from form
 
         # Put customer record
-        complete_key = client.key(kind, data['name'])
+        complete_key = client.key(kind, data['Name'])
         customer = datastore.Entity(key=complete_key)
         customer.update({
             'Name': data['Name'],
