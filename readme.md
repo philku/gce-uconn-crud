@@ -47,3 +47,30 @@ Pull the Repo
 ```shell script
 git clone https://github.com/philku/gce-uconn-crud.git
 ```
+
+### 3
+Navigate into the repo
+
+```shell script
+cd gcr-uconn-crud
+```
+
+### 3
+Deploy app
+
+```shell script
+gcloud app deploy
+```
+
+Select a location that suits you
+
+Verify the deploy information and hit enter to continue 
+
+### 4
+Browse to your app
+
+```shell script
+gcloud app browse
+```
+
+It should open in your default browser, if not click the link

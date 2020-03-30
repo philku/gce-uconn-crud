@@ -11,7 +11,7 @@ app = Flask(__name__)
 
 
 # Index Page
-@app.route('/', methods=['kind'])
+@app.route('/', methods=['GET'])
 def index():
     # Get Customer List
     query = client.query(kind=kind)
