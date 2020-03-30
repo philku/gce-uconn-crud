@@ -40,14 +40,14 @@ def create():
         client.put(customer)
 
         # Redirect to customer page
-        return redirect("/" + data['Name'])
+        return redirect("/read/" + data['Name'])
     else:
         # GET - Render customer creation form
         return render_template('create.html')
 
 
 # Read
-@app.route('/<name>', methods=['GET'])
+@app.route('/read/<name>', methods=['GET'])
 def read(name):
     # Retrieve Customer Data
     key = client.key(kind, name)
@@ -59,7 +59,7 @@ def read(name):
 
 
 # Update
-@app.route('/<name>/update', methods=['GET', 'POST'])
+@app.route('/update/<name>', methods=['GET', 'POST'])
 def update(name):
     if request.method == 'POST':
         data = request.form.to_dict(flat=True)      # Data from form
@@ -72,7 +72,7 @@ def update(name):
         customer['address_type'] = data['address_type']
 
         # Redirect to customer page
-        return redirect("/" + name)
+        return redirect("/read/" + name)
 
     else:
         # Get customer data
@@ -85,7 +85,7 @@ def update(name):
 
 
 # Delete
-@app.route('/<name>/delete', methods=['GET'])
+@app.route('/delete/<name>', methods=['GET'])
 def delete(name):
     # Delete Customer Record
     key = client.key(kind, name)
