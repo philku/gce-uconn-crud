@@ -24,6 +24,13 @@
     <div class="container">
         <h2>Customers</h2>
 
+        <ul>
+        {% for customer in customers %}
+            <li><a href="/{{ customer.Name }}">{{ customer.Name }}</a></li>
+        {% empty %}
+            <li>You have no customers yet. Click <a href="/create">here</a> or "Add Customer" in the navbar to create one.</li>
+        {% endfor %}
+        </ul>
     </div>
 </section>
 

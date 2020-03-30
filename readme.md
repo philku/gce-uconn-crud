@@ -33,3 +33,17 @@ HTML files used in the app
 ## Setup
 
 ### 1
+Create a new project if needed.
+
+You will be using Datastore Mode, so this will not work in a project with Firestore Native mode 
+already enabled.
+
+### 2
+Start Cloud Shell
+
+### 3
+Pull the Repo
+
+```shell script
+git clone https://github.com/philku/gce-uconn-crud.git
+```
