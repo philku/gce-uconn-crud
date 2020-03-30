@@ -52,7 +52,7 @@ git clone https://github.com/philku/gce-uconn-crud.git
 Navigate into the repo
 
 ```shell script
-cd gcr-uconn-crud
+cd gce-uconn-crud
 ```
 
 ### 3
