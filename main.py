@@ -70,6 +70,7 @@ def update(name):
         customer['address'] = data['address']
         customer['instructions'] = data['instructions']
         customer['address_type'] = data['address_type']
+        client.put(customer)
 
         # Redirect to customer page
         return redirect("/read/" + name)
