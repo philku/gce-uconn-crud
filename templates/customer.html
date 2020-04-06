@@ -4,18 +4,15 @@
     <title>CRUD Example - Customer</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
 
+
 {# NavBar #}
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar">
     <a class="navbar-brand" href="/">Customers</a>
-    <ul class="navbar-nav">
-        <li class="nav-item active">
-            <a class="nav-link" href="/create">Add Customer</a>
-        </li>
-    </ul>
+    <a href="/create">Add Customer</a>
 </nav>
 
 {# Customer Options #}
@@ -30,13 +27,12 @@
 
 {# Customer info #}
 <section>
-    <div class="container">
-        Name: {{ name }} <br>
-        Address: {{ address }} <br>
-        Address Type: {{ address_type }} <br>
-        Instructions: {{ instructions }}
-    </div>
+    Name: {{ name }} <br>
+    Address: {{ address }} <br>
+    Address Type: {{ address_type }} <br>
+    Instructions: {{ instructions }}
 </section>
+
 
 </body>
 </html>

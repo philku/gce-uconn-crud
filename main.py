@@ -1,5 +1,5 @@
 # Required Flask Libraries
-from flask import Flask, request, render_template, redirect
+from flask import Flask, request, render_template, redirect, send_from_directory
 
 # Imports the Google Cloud client library
 from google.cloud import datastore
@@ -19,6 +19,12 @@ def index():
 
     # Render index page
     return render_template('index.html', customers=results)
+
+
+# Static directory for css
+@app.route('/static/<path:path>')
+def send_js(path):
+    return send_from_directory('static', path)
 
 
 # CRUD ENDPOINTS
