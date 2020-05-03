@@ -1,6 +1,9 @@
 # Required Flask Libraries
 from flask import Flask, request, render_template, redirect, send_from_directory
 
+from google.cloud import translate_v2 as translate
+translate_client = translate.Client()
+
 # Imports the Google Cloud client library
 from google.cloud import datastore
 client = datastore.Client()
@@ -59,9 +62,12 @@ def read(name):
     key = client.key(kind, name)
     customer = client.get(key)
 
+    # translate instructions
+    translated_ins = translate_client.translate(customer['instructions'], target_language="es")
+
     # Render the page
     return render_template('customer.html', name=customer['Name'], address=customer['address'],
-                           instructions=customer['instructions'], address_type=customer['address_type'])
+                           instructions=translated_ins['translatedText'], address_type=customer['address_type'])
 
 
 # Update
